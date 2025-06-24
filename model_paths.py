@@ -31,7 +31,7 @@ def frameworks(skip_training, running_model_paths, pre_trained_model_paths):
                 'Quantized_Tflite_int8' : os.path.join('..', 'runs', 'Regular', 'Regular_Pytorch', 'weights', 'fp32', 'best.pb', 'saved_model.pb')
             },
             'keras':{
-                'Regular_Pytorch': os.path.join('..', 'runs', 'Regular', 'Regular_Pytorch', 'weights', 'fp32', 'best_saved_mdoel'),
+                'Regular_Pytorch': os.path.join('..', 'runs', 'Regular', 'Regular_Pytorch', 'weights', 'fp32', 'best_saved_model'),
                 'Quantized_Tflite_fp16' : os.path.join('..', 'runs', 'Regular', 'Regular_Pytorch', 'weights', 'fp32', 'best_saved_model'),
                 'Quantized_Tflite_int8' : os.path.join('..', 'runs', 'Regular', 'Regular_Pytorch', 'weights', 'fp32', 'best_saved_model')
             },

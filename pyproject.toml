@@ -1,0 +1,11 @@
+# The contents of pyproject.toml
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dts"
+version = "1.0.0"
+
+[tool.setuptools.packages.find]
+where = ["."]

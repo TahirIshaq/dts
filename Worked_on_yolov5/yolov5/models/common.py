@@ -243,7 +243,7 @@ class AutoShape(nn.Module):
         t = [time_sync()]
         p = next(self.model.parameters())  # for device and type
         if isinstance(imgs, torch.Tensor):  # torch
-            with amp.autocast(enabled=p.device.type != 'cpu'):
+            with torch.amp.autocast('cuda'):
                 return self.model(imgs.to(p.device).type_as(p), augment, profile)  # inference
 
         # Pre-process
@@ -272,7 +272,7 @@ class AutoShape(nn.Module):
         x = torch.from_numpy(x).to(p.device).type_as(p) / 255.  # uint8 to fp16/32
         t.append(time_sync())
 
-        with amp.autocast(enabled=p.device.type != 'cpu'):
+        with torch.amp.autocast('cuda'):
             # Inference
             y = self.model(x, augment, profile)[0]  # forward
             t.append(time_sync())

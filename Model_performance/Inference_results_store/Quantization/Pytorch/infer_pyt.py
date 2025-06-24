@@ -51,7 +51,7 @@ def quantized_load(
     model.eval()
     model = torch.quantization.convert(model)
 
-    ckpt = torch.load(weights, map_location=torch.device(device))
+    ckpt = torch.load(weights, weights_only=False, map_location=torch.device(device))
 
     state_dict = ckpt['model']
 

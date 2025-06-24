@@ -35,7 +35,7 @@ def main(opt):
     device = select_device(opt.device, batch_size=opt.batch_size)
     model = Model(cfg = opt.cfg, ch=3, nc=nc, anchors=hyp.get('anchors')).to(device)
     
-    ckpt = torch.load(opt.weights, map_location=torch.device(device))
+    ckpt = torch.load(opt.weights, weights_only=False, map_location=torch.device(device))
 
     state_dict = ckpt['model'].state_dict()
 

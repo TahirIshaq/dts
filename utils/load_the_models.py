@@ -28,7 +28,7 @@ class load_the_model:
             self.model = attempt_load(model_path, map_location=self.device_name)  # load FP32 model
         else:
             '''Trying to load any other pytorch model weights'''
-            self.model = torch.load(model_path, map_location = torch.device(self.device_name))
+            self.model = torch.load(model_path, weights_only=False, map_location = torch.device(self.device_name))
         self.statement = model_name_user_defined + " has been loaded"
 
 

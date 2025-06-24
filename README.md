@@ -5,7 +5,8 @@ YOLOv5 🚀 is a family of object detection architectures and models pretrained 
 </p></div>
 
 ## <div align="center"> SETUP </div>
-
+<b>STEP 0 :</b>
+python3 -m pip install -e .
 <b>STEP 1 :</b>
 - Download dataset from : http://shuoyang1213.me/WIDERFACE/index.html
     - Train : 12880
